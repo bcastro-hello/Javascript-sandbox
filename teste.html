@@ -1,2 +1,45 @@
 /**THIS IS A PULL TEST/
 /*THIS IS A PUSH TEST*/
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+
+
+
+  
+<script>
+jQuery(function($) {
+  var classes = ['card-1', 'card-2', 'card-3'],
+      classes_cpy = classes.slice(),
+      i = 10,
+      ran;
+
+  for (; i--;) {
+    ran = (Math.random() * classes_cpy.length) | 0;
+    $('body').append(
+      $('<div>', {
+        'text': i,
+        // remove and return a random string from the array
+        'class': 'card ' + classes_cpy.splice(ran, 1)[0]
+      })
+    );
+    // reload the array with values when it is empty
+    if (classes_cpy.length === 0) {
+      classes_cpy = classes.slice();
+    }
+  }
+});
+</script>
+
+
+
+</body>
+</html>
